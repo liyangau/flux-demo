@@ -1,0 +1,15 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: core-cert-manager
+  namespace: flux-system
+spec:
+  interval: 5m
+  dependsOn:
+  - name: cluster-helm-repos
+  sourceRef:
+    kind: GitRepository
+    name: homelab-flux
+  path: ./infrastructure/base/cert-manager
+  targetNamespace: cert-manager
+  prune: true
