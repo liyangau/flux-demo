@@ -9,7 +9,7 @@ spec:
   - name: cluster-helm-repos
   sourceRef:
     kind: GitRepository
-    name: homelab-flux
+    name: demo-flux
   path: ./infrastructure/base/cert-manager
   targetNamespace: cert-manager
   prune: true

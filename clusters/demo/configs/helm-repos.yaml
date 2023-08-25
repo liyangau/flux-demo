@@ -7,6 +7,6 @@ spec:
   interval: 5m
   sourceRef:
     kind: GitRepository
-    name: homelab-flux
+    name: demo-flux
   path: ./infrastructure/helm-repositories
   prune: true

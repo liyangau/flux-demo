@@ -9,6 +9,6 @@ spec:
     - name: cluster-helm-repos
   sourceRef:
     kind: GitRepository
-    name: homelab-flux
-  path: ./clusters/homelab/core
+    name: demo-flux
+  path: ./clusters/demo/core
   prune: true
