@@ -12,6 +12,6 @@ spec:
   timeout: 5m
   sourceRef:
     kind: GitRepository
-    name: homelab-flux
+    name: demo-flux
   path: ./infrastructure/configs/kuma
   prune: true
