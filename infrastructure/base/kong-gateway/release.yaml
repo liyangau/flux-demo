@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kong-gateway
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: kong
+      version: "2.26.4"
+      sourceRef:
+        kind: HelmRepository
+        name: kong
+        namespace: flux-system
+      interval: 1h
+  valuesFrom:
+    - kind: ConfigMap
+      name: kong-gateway-values

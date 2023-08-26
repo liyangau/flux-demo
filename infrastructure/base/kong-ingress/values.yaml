@@ -1,0 +1,22 @@
+deployment:
+  kong:
+    enabled: false
+
+proxy:
+  nameOverride: kong-gateway-kong-proxy
+
+ingressController:
+  enabled: true
+  image:
+    repository: kong/kubernetes-ingress-controller
+    tag: 2.11.0
+
+  gatewayDiscovery:
+    enabled: true
+    adminApiService:
+      name: kong-gateway-kong-admin
+  adminApi:
+    tls:
+      client:
+        enabled: true
+        caSecretName: admin-api-ca-cert

@@ -1,0 +1,18 @@
+image:
+  repository: kong
+  tag: "3.4"
+
+proxy:
+  loadBalancerIP: ${proxy_lb_ip}
+
+ingressController:
+  enabled: false
+
+replicaCount: 3
+
+admin:
+  enabled: true
+  type: ClusterIP
+  tls:
+    client:
+      secretName: admin-api-ca-cert
