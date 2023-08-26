@@ -1,0 +1,18 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps-httpbin
+  namespace: flux-system
+spec:
+  interval: 1h
+  dependsOn:
+    - name: core-kuma
+    - name: core-kong-ingress
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: demo-flux
+  path: ./apps/httpbin
+  targetNamespace: httpbin
+  prune: true
