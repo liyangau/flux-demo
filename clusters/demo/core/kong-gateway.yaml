@@ -18,8 +18,3 @@ spec:
   postBuild:
     substitute:
       proxy_lb_ip: "172.18.18.150"
-  healthChecks:
-    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
-      kind: HelmRelease
-      name: kuma
-      namespace: kuma-system
