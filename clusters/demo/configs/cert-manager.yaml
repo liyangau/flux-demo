@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-kuma
+  name: config-cert-manager
   namespace: flux-system
 spec:
   dependsOn:
@@ -13,5 +13,9 @@ spec:
   sourceRef:
     kind: GitRepository
     name: demo-flux
-  path: ./infrastructure/configs/kuma
+  path: ./infrastructure/configs/cert-manager
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
