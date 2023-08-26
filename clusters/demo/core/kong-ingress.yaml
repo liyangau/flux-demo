@@ -14,8 +14,5 @@ spec:
   path: ./infrastructure/base/kong-ingress
   prune: true
   targetNamespace: kong
-  healthChecks:
-    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
-      kind: HelmRelease
-      name: kuma
-      namespace: kuma-system
+  wait: true
+  timeout: 3m0s
