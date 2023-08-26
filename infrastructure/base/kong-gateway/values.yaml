@@ -10,6 +10,9 @@ ingressController:
 
 replicaCount: 3
 
+manager:
+  enabled: false
+
 admin:
   enabled: true
   type: ClusterIP
