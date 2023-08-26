@@ -6,7 +6,6 @@ metadata:
 spec:
   interval: 5m
   dependsOn:
-  - name: core-kuma
   - name: cluster-helm-repos
   - name: core-kong-ingress
   sourceRef:
