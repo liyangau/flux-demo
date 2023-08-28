@@ -8,7 +8,6 @@ spec:
   dependsOn:
   - name: cluster-helm-repos
   - name: core-kong
-  # - name: core-kong-ingress
   sourceRef:
     kind: GitRepository
     name: demo-flux

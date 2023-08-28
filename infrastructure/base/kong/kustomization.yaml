@@ -8,12 +8,12 @@ resources:
   - namespace.yaml
   - ca-enc.yaml
   - client-enc.yaml
-# patches:
-#   - target:
-#       kind: Namespace
-#       name: kong
-#     patch: |-
-#       - op: add
-#         path: /metadata/labels
-#         value:
-#           kuma.io/sidecar-injection: enabled
+patches:
+  - target:
+      kind: Namespace
+      name: kong
+    patch: |-
+      - op: add
+        path: /metadata/labels
+        value:
+          kuma.io/sidecar-injection: enabled
