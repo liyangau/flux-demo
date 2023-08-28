@@ -15,8 +15,10 @@ ingressController:
     enabled: true
     adminApiService:
       name: kong-gateway-kong-admin
-  # adminApi:
-  #   tls:
-  #     client:
-  #       enabled: true
-  #       caSecretName: admin-api-ca-cert
+  adminApi:
+    tls:
+      client:
+        enabled: true
+        certProvided: true
+        secretName: kong-ingress-kong-admin-api-keypair
+        caSecretName: admin-api-ca-cert
