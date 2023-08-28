@@ -7,7 +7,7 @@ spec:
   interval: 5m
   dependsOn:
   - name: cluster-helm-repos
-  - name: core-kong-ingress
+  # - name: core-kong-ingress
   sourceRef:
     kind: GitRepository
     name: demo-flux

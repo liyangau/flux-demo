@@ -16,6 +16,6 @@ manager:
 admin:
   enabled: true
   type: ClusterIP
-  tls:
-    client:
-      secretName: admin-api-ca-cert
+  # tls:
+  #   client:
+  #     secretName: admin-api-ca-cert
