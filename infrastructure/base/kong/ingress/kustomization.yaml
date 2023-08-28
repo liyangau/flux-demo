@@ -5,17 +5,7 @@ commonLabels:
   app.kubernetes.io/name: kong-ingress
   app.kubernetes.io/instance: kong-ingress
 resources:
-  - namespace.yaml
   - release.yaml
-# patches:
-#   - target:
-#       kind: Namespace
-#       name: kong
-#     patch: |-
-#       - op: add
-#         path: /metadata/labels
-#         value:
-#           kuma.io/sidecar-injection: enabled
 configMapGenerator:
   - name: kong-ingress-values
     files:
