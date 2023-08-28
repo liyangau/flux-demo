@@ -14,3 +14,7 @@ spec:
   path: ./infrastructure/base/kong
   prune: true
   targetNamespace: kong
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
