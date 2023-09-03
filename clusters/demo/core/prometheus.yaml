@@ -2,18 +2,17 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: config-kong-prometheus
+  name: core-prometheus
   namespace: flux-system
 spec:
   dependsOn:
-    - name: apps-prometheus
-    - name: core-kong-gateway
-    - name: core-kong-ingress
+    - name: cluster-helm-repos
   interval: 1h
   retryInterval: 1m
   timeout: 5m
   sourceRef:
     kind: GitRepository
     name: demo-flux
-  path: ./apps/prometheus/config-kong
+  path: ./infrastructure/base/prometheus
+  targetNamespace: monitoring
   prune: true
