@@ -8,6 +8,8 @@ resources:
   - namespace.yaml
   - ca-enc.yaml
   - client-enc.yaml
+  - kong-gateway.yaml
+  - kong-ingress.yaml
 patches:
   - target:
       kind: Namespace
