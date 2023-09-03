@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: keycloak
+commonLabels:
+  app.kubernetes.io/name: kc-postgresql
+  app.kubernetes.io/instance: kc-postgresql
+resources:
+  - release.yaml
+  - kc-db-password-enc.yaml

@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: stack-keycloak
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: cluster-helm-repos
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: demo-flux
+  path: ./stacks/keycloak
+  prune: true

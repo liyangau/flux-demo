@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: keycloak
+commonLabels:
+  app.kubernetes.io/name: keycloak
+  app.kubernetes.io/instance: keycloak
+resources:
+  - release.yaml
+  - kc-admin-password-enc.yaml
+  - ingress.yaml
