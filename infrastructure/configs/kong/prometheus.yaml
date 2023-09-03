@@ -19,10 +19,9 @@ kind: ServiceMonitor
 metadata:
   name: kong-gateway-kong
   namespace: monitoring
+  labels:
+    release: prometheus
 spec:
-  endpoints:
-  - scheme: http
-    targetPort: status
   jobLabel: kong-gateway
   namespaceSelector:
     matchNames:
@@ -31,3 +30,6 @@ spec:
     matchLabels:
       app.kubernetes.io/instance: kong-gateway
       app.kubernetes.io/name: kong
+  endpoints:
+  - scheme: http
+    targetPort: status

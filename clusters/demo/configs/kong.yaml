@@ -6,6 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
+    - name: core-base
     - name: core-kong-gateway
     - name: core-kong-ingress
   interval: 1h
