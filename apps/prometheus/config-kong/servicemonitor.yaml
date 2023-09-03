@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kong-gateway-kong
+  namespace: monitoring
+spec:
+  endpoints:
+  - scheme: http
+    targetPort: status
+  jobLabel: kong-gateway
+  namespaceSelector:
+    matchNames:
+    - kong
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: kong-gateway
+      app.kubernetes.io/name: kong

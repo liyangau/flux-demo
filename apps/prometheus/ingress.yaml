@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    konghq.com/strip-path: "true"
+    cert-manager.io/cluster-issuer: "lab-k8s-ca-issuer"
+  name: grafana-route
+spec:
+  ingressClassName: kong
+  rules:
+  - host: grafana.li.lab
+    http:
+      paths:
+      - backend:
+          service:
+            name: prometheus-grafana
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - grafana.li.lab
+    secretName: grafana-cert
