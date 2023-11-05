@@ -2,9 +2,6 @@ image:
   repository: kong
   tag: "3.4"
 
-proxy:
-  loadBalancerIP: ${proxy_lb_ip}
-
 ingressController:
   enabled: false
 
@@ -16,6 +13,6 @@ manager:
 admin:
   enabled: true
   type: ClusterIP
-  # tls:
-  #   client:
-  #     secretName: admin-api-ca-cert
+  tls:
+    client:
+      secretName: admin-api-ca-cert
