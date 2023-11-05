@@ -14,6 +14,3 @@ spec:
   path: ./infrastructure/base/kong/gateway
   prune: true
   targetNamespace: kong
-  postBuild:
-    substitute:
-      proxy_lb_ip: "172.18.18.150"

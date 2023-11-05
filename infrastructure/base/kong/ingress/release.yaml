@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: kong
-      version: "2.26.4"
+      version: "2.30.0"
       sourceRef:
         kind: HelmRepository
         name: kong
