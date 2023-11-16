@@ -10,7 +10,7 @@ spec:
     branch: main
   secretRef:
     name: demo-flux-auth
-  url: ssh://git@github.com/liyangau/flux-demo
+  url: https://github.com/liyangau/flux-demo
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
