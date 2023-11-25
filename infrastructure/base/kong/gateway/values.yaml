@@ -1,6 +1,6 @@
 image:
   repository: kong
-  tag: "3.4"
+  tag: "3.5"
 
 ingressController:
   enabled: false
