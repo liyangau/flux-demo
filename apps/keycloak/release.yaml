@@ -16,6 +16,7 @@ spec:
   values:
     auth:
       existingSecret: kc-admin-password
+      # password: admin
       passwordSecretKey: password
       adminUser: admin
     production: true
